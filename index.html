@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacute | Cybersecurity GRC and privacy advisory</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#0A0A11"/><path d="M60 34 L82 84 L38 84 Z" fill="none" stroke="#A855F7" stroke-width="6" stroke-linejoin="round"/></svg></template>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas-off">
+<meta name="description" content="Pass the audit. Win the deal. One program, built for your industry. Cybersecurity GRC and privacy. Professional services for government and regulated industries.">
+<meta name="theme-color" content="#0A0A11">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Privacute">
+<meta property="og:title" content="Privacute | Cybersecurity GRC and privacy advisory">
+<meta property="og:description" content="Pass the audit. Win the deal. One program, built for your industry. Cybersecurity GRC and privacy.">
+<meta property="og:image" content="https://privacute.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>@font-face{font-family:"Space Grotesk";font-weight:400;font-display:swap;src:url(fonts/space-grotesk-v22-latin-regular.woff2) format("woff2")}@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/inter-v20-latin-regular.woff2) format("woff2")}@font-face{font-family:"JetBrains Mono";font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-v24-latin-regular.woff2) format("woff2")}</style>
+<style>body{margin:0;background:#0A0A11;color:#F2F2F5}a{color:#C084FC;text-decoration:none}a:hover{color:#F2F2F5}::selection{background:rgba(168,85,247,.35)}@media(max-width:900px){.pv-nav{order:3;width:100%;overflow-x:auto;gap:20px!important;white-space:nowrap}header{flex-wrap:wrap}}@font-face{font-family:"Space Grotesk";font-weight:500;font-display:swap;src:url(fonts/space-grotesk-v22-latin-500.woff2) format("woff2")}@font-face{font-family:"Space Grotesk";font-weight:600 700;font-display:swap;src:url(fonts/space-grotesk-v22-latin-700.woff2) format("woff2")}@font-face{font-family:Inter;font-weight:500;font-display:swap;src:url(fonts/inter-v20-latin-500.woff2) format("woff2")}@font-face{font-family:"JetBrains Mono";font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-v24-latin-500.woff2) format("woff2")}</style>
+</helmet>
+<div style="position:relative;background:#0A0A11;color:#F2F2F5;font-family:Inter,sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;isolation:isolate"><canvas ref="{{ heroRef }}" aria-hidden="true" style="position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;-webkit-mask-image:linear-gradient(100deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.32) 100%);mask-image:linear-gradient(100deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.1) 50%,rgba(0,0,0,.32) 100%)"></canvas><div style="flex:1">
+<canvas ref="{{ transRef }}" style="position:fixed;inset:0;width:100vw;height:100vh;z-index:90;pointer-events:none"></canvas>
+<canvas ref="{{ introRef }}" style="position:fixed;inset:0;width:100vw;height:100vh;z-index:100;background:#0A0A11;display:{{ introDisplay }};transition:opacity .6s"></canvas>
+<button onClick="{{ skipIntro }}" style="position:fixed;right:20px;bottom:20px;z-index:101;display:{{ introDisplay }};background:transparent;border:1px solid rgba(192,132,252,.5);color:#C084FC;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;padding:10px 14px;border-radius:3px;cursor:pointer" style-hover="background:rgba(168,85,247,.15);color:#F2F2F5">Skip intro</button>
+
+<header style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(20px,5vw,64px);background:rgba(10,10,17,.82);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)">
+<a href="#" onClick="{{ goHome }}"><img src="assets/lockup-primary-knockout.svg" alt="Privacute" style="height:26px;display:block"></a>
+<nav class="pv-nav" style="display:flex;gap:28px;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase">
+<sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6"><a href="#" onClick="{{ n.go }}" style="color:{{ n.color }};border-bottom:1px solid {{ n.line }};padding-bottom:4px" style-hover="color:#C084FC">{{ n.label }}</a></sc-for>
+</nav>
+</header>
+
+<section id="top" style="display:{{ show.home }};min-height:calc(100vh - 140px);position:relative;padding:clamp(40px,6vw,72px) clamp(20px,5vw,64px) clamp(40px,6vw,72px);overflow:hidden">
+<div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 30% 40%,#000,transparent);mask-image:radial-gradient(ellipse 70% 80% at 30% 40%,#000,transparent)"></div>
+<div style="position:absolute;left:-10%;top:-20%;width:90%;height:140%;background:radial-gradient(ellipse,rgba(168,85,247,.20) 0%,transparent 66%)"></div>
+<div style="position:relative;max-width:1100px;margin:0 auto;text-align:center">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:18px">Professional services · Cybersecurity GRC &amp; privacy</div>
+<h1 style="font:700 clamp(1.9rem,4vw,3.1rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 auto 18px;max-width:26ch">Pass the audit. Win the deal. One program, built for your industry.</h1>
+<p style="max-width:56ch;margin:0 auto 24px;color:rgba(242,242,245,.82)">Turn the security review from a delay into a differentiator.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+<a href="mailto:info@privacute.com?subject=Engagement%20inquiry" style="background:linear-gradient(135deg,#4C63FF,#A855F7);color:#F2F2F5;font:500 13px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:15px 22px;border-radius:3px" style-hover="filter:brightness(1.12);color:#F2F2F5">Start a conversation</a>
+</div>
+<div style="margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;max-width:760px;margin-left:auto;margin-right:auto;text-align:left">
+<sc-for list="{{ cards }}" as="c" hint-placeholder-count="6"><a href="#" onClick="{{ c.go }}" style="display:flex;flex-direction:column;gap:6px;min-height:120px;padding:20px 22px;align-content:start;border:1px solid rgba(255,255,255,.14);border-radius:4px;background:rgba(10,10,17,.74);backdrop-filter:blur(4px);color:#F2F2F5;transition:transform .2s,border-color .2s,background .2s" style-hover="border-color:#A855F7;background:rgba(168,85,247,.14);transform:translateY(-3px);color:#F2F2F5" style-focus="outline:2px solid #C084FC;outline-offset:2px"><span style="display:flex;justify-content:space-between;align-items:center;font:500 22px 'Space Grotesk',sans-serif">{{ c.title }}<span style="color:#C084FC;font:500 16px 'JetBrains Mono',monospace">&rarr;</span></span><span style="font-size:14px;line-height:1.45;color:rgba(242,242,245,.8)">{{ c.line }}</span></a></sc-for>
+</div>
+</div>
+</section>
+
+
+<section id="overview" style="display:{{ show.firm }};padding:clamp(56px,8vw,112px) clamp(20px,5vw,64px)">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(24px,5vw,80px);max-width:1200px">
+<div><div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">01 / Company overview</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0">Compliance that holds up when it counts.</h2></div>
+<div style="color:rgba(242,242,245,.82);display:grid;gap:18px;max-width:64ch">
+<p style="margin:0">Privacute is a Maryland cybersecurity firm for teams that can’t afford a paper-only program. We specialize in governance, risk and compliance (GRC) and data privacy, and we map every control to the rules your industry answers to.</p>
+<p style="margin:0">Programs, assessments, audit evidence, and training that turns policy into habit. And because your newest users aren’t human, we also lock down AI agents and service accounts: scoped access, automatic expiry, every request on the record.</p>
+<p style="margin:0">The founder’s background spans finance, IT help desk, SaaS, cybersecurity GRC and data privacy.</p>
+</div></div>
+</section>
+
+
+<section id="industries" style="display:{{ show.industries }};padding:clamp(40px,6vw,80px) clamp(20px,5vw,64px)">
+<div style="max-width:1200px">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">01 / Industries</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 0 12px;max-width:22ch">Your industry. Your rules. One program.</h2>
+<p style="margin:0 0 36px;color:rgba(242,242,245,.75);max-width:60ch">Every sector faces a different auditor. We map governance, risk, compliance and privacy work to the requirements that apply to you.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px">
+<sc-for list="{{ industries }}" as="i" hint-placeholder-count="4"><div style="padding:24px;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:rgba(10,10,17,.82)" style-hover="border-color:rgba(168,85,247,.6)"><div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#C084FC;margin-bottom:12px">{{ i.n }}</div><div style="font:600 1.25rem 'Space Grotesk',sans-serif;margin-bottom:6px">{{ i.title }}</div><div style="font:400 12.5px/1.6 'JetBrains Mono',monospace;color:rgba(242,242,245,.7)">{{ i.note }}</div></div></sc-for>
+</div></div></section>
+<section id="capabilities" style="display:{{ show.services }};padding:clamp(40px,6vw,80px) clamp(20px,5vw,64px)">
+<div style="max-width:1200px">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">02 / Services</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 0 36px">What we do.</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+<sc-for list="{{ competencies }}" as="c" hint-placeholder-count="3">
+<div style="padding:28px;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:rgba(10,10,17,.82)" style-hover="border-color:rgba(168,85,247,.6)">
+<div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#C084FC;margin-bottom:14px">{{ c.n }}</div>
+<h3 style="font:600 1.3rem/1.25 'Space Grotesk',sans-serif;margin:0 0 12px">{{ c.title }}</h3>
+<p style="margin:0;color:rgba(242,242,245,.75);font-size:16px">{{ c.body }}</p>
+</div></sc-for>
+</div>
+</div>
+</section>
+
+
+<section id="ai-access" style="display:{{ show.ai }};padding:clamp(40px,6vw,80px) clamp(20px,5vw,64px)">
+<div style="max-width:1200px">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">03 / AI access governance</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 0 12px;max-width:20ch">Governing the AI: scope it, expire it, deny the rest.</h2>
+<p style="margin:0 0 12px;font:500 clamp(1.05rem,1.8vw,1.25rem)/1.35 'Space Grotesk',sans-serif;color:#F2F2F5">Govern the AI. Teach the people.</p>
+<p style="margin:0 0 32px;color:rgba(242,242,245,.7);max-width:60ch">Our AI governance work puts AI agents and service accounts under the same discipline as people: narrow, short-lived access, and a record of every request. Pick a request to see the model.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px">
+<sc-for list="{{ scenarios }}" as="s" hint-placeholder-count="3"><button onClick="{{ s.pick }}" style="cursor:pointer;font:500 12px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:3px;color:{{ s.color }};background:{{ s.bg }};border:1px solid {{ s.border }}">{{ s.label }}</button></sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px">
+<sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+<div style="position:relative;padding:20px;border-radius:4px;background:{{ st.bg }};border:1px solid {{ st.border }};opacity:{{ st.opacity }};transition:all .4s">
+<div style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#C084FC;margin-bottom:10px">{{ st.n }}</div>
+<div style="font:600 1.15rem 'Space Grotesk',sans-serif;margin-bottom:8px">{{ st.title }}</div>
+<div style="font:400 12.5px/1.6 'JetBrains Mono',monospace;color:rgba(242,242,245,.72)">{{ st.detail }}</div>
+</div></sc-for>
+</div>
+<div style="margin-top:14px;padding:20px;border-radius:4px;border:1px solid {{ outcome.border }};background:{{ outcome.bg }};display:grid;gap:6px;opacity:{{ outcome.opacity }};transition:all .4s">
+<div style="font:500 13px 'JetBrains Mono',monospace;letter-spacing:.14em;color:{{ outcome.color }}">{{ outcome.verdict }}</div>
+<div style="font:400 13px/1.6 'JetBrains Mono',monospace;color:rgba(242,242,245,.8)">{{ outcome.log }}</div>
+</div>
+</div>
+</section>
+
+
+<section id="differentiators" style="display:{{ show.why }};padding:clamp(40px,6vw,80px) clamp(20px,5vw,64px)">
+<div style="max-width:1200px">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">02 / Why Privacute</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 0 36px">What sets us apart.</h2>
+<div style="display:grid;gap:0;border-top:1px solid rgba(255,255,255,.1)">
+<sc-for list="{{ diffs }}" as="d" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:clamp(16px,4vw,64px);padding:28px 0;border-bottom:1px solid rgba(255,255,255,.1)">
+<div style="font:600 1.3rem/1.25 'Space Grotesk',sans-serif"><span style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;color:#C084FC;display:block;margin-bottom:8px">{{ d.n }}</span>{{ d.title }}</div>
+<p style="margin:0;color:rgba(242,242,245,.78);max-width:56ch">{{ d.body }}</p>
+</div></sc-for>
+</div>
+</div>
+</section>
+
+
+<section id="engage" style="display:{{ show.engage }};position:relative;padding:clamp(56px,8vw,112px) clamp(20px,5vw,64px) clamp(56px,8vw,96px);overflow:hidden">
+<div style="position:absolute;right:-20%;bottom:-40%;width:80%;height:120%;background:radial-gradient(ellipse,rgba(76,99,255,.18) 0%,transparent 66%)"></div>
+<div style="position:relative;max-width:1200px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,6vw,96px)">
+<div>
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">03 / Engage</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 0 20px">Let’s scope your program.</h2>
+<p style="margin:0 0 28px;color:rgba(242,242,245,.78);max-width:46ch">Available for engagements, pilots, and teaming as prime or subcontractor. Maryland small business.</p>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center">
+<a href="mailto:info@privacute.com?subject=Engagement%20inquiry" style="background:linear-gradient(135deg,#4C63FF,#A855F7);color:#F2F2F5;font:500 13px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:15px 22px;border-radius:3px" style-hover="filter:brightness(1.12);color:#F2F2F5">Start a conversation</a>
+<a href="Privacute-Capability-Statement.pdf" style="border:1px solid rgba(242,242,245,.3);color:#F2F2F5;font:500 13px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:15px 22px;border-radius:3px" style-hover="border-color:#C084FC;color:#C084FC">Capability statement (PDF)</a>
+</div>
+</div>
+<div>
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(242,242,245,.6);margin-bottom:14px">Company data</div>
+<div style="border-top:1px solid rgba(255,255,255,.1)">
+<sc-for list="{{ company }}" as="r" hint-placeholder-count="7">
+<div style="display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1);align-items:baseline">
+<span style="font:500 11px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC">{{ r.k }}</span>
+<span style="font:400 14px/1.5 'JetBrains Mono',monospace;color:{{ r.color }};border:{{ r.border }};padding:{{ r.pad }};border-radius:3px">{{ r.v }}</span>
+</div></sc-for>
+</div>
+</div>
+</div>
+</section>
+
+<section id="privacy" style="display:{{ show.privacy }};min-height:calc(100vh - 140px);padding:clamp(56px,8vw,112px) clamp(20px,5vw,64px)">
+<div style="max-width:760px">
+<div style="font:500 12px 'JetBrains Mono',monospace;letter-spacing:.14em;text-transform:uppercase;color:#C084FC;margin-bottom:14px">Legal</div>
+<h2 style="font:600 clamp(1.8rem,3.6vw,2.6rem)/1.1 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin:0 0 12px">Privacy policy</h2>
+<p style="margin:0 0 36px;color:rgba(242,242,245,.6);font:400 12px 'JetBrains Mono',monospace;letter-spacing:.08em">Last updated November 16, 2026</p>
+<div style="display:grid;gap:28px;color:rgba(242,242,245,.82)">
+<div><h3 style="font:600 1.15rem 'Space Grotesk',sans-serif;margin:0 0 8px;color:#F2F2F5">What this site collects</h3><p style="margin:0">Nothing directly. This site has no forms, accounts, cookies of its own or advertising, and it does not currently use analytics. Its pages, fonts and images are served from our own site.</p></div>
+<div><h3 style="font:600 1.15rem 'Space Grotesk',sans-serif;margin:0 0 8px;color:#F2F2F5">Hosting and server logs</h3><p style="margin:0">This site is delivered through Cloudflare, which acts as our hosting and security provider. Cloudflare processes visitors' IP addresses and request details, such as browser type and pages requested, to deliver the site, block attacks and keep standard logs. It may also set strictly necessary security cookies. We do not use this data to identify visitors. See <a href="https://www.cloudflare.com/privacypolicy/" style="color:#C084FC;text-decoration:underline" style-hover="color:#F2F2F5">Cloudflare's privacy policy</a>.</p></div>
+<div><h3 style="font:600 1.15rem 'Space Grotesk',sans-serif;margin:0 0 8px;color:#F2F2F5">When you email us</h3><p style="margin:0">The contact buttons open your email app. If you send us a message, we receive your email address and whatever you include. We use it only to reply and to scope or deliver work you ask about. We do not sell or share it for marketing, and we share it with service providers only as needed to operate our email and business systems.</p></div>
+<div><h3 style="font:600 1.15rem 'Space Grotesk',sans-serif;margin:0 0 8px;color:#F2F2F5">Retention and your requests</h3><p style="margin:0">We keep correspondence only as long as needed for the purpose above or as required by contract or law. To ask what we hold about you, or to have it corrected or deleted, email us and we will respond promptly.</p></div>
+<div><h3 style="font:600 1.15rem 'Space Grotesk',sans-serif;margin:0 0 8px;color:#F2F2F5">Changes</h3><p style="margin:0">If this changes, for example if we add analytics, we will update this page and its date before the change takes effect.</p></div>
+<div><a href="mailto:info@privacute.com?subject=Privacy%20request" style="border:1px solid #A855F7;color:#F2F2F5;font:500 13px 'JetBrains Mono',monospace;letter-spacing:.1em;text-transform:uppercase;padding:15px 24px;display:inline-block" style-hover="background:rgba(168,85,247,.15)">Privacy questions</a></div>
+</div></div>
+</section>
+</div>
+<footer style="padding:28px clamp(20px,5vw,64px);border-top:1px solid rgba(255,255,255,.06);display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;font:400 12px 'JetBrains Mono',monospace;letter-spacing:.08em;color:rgba(242,242,245,.6)">
+<span>© {{ year }} Privacute · Maryland · <a href="#" onClick="{{ goPrivacy }}" style="color:rgba(242,242,245,.6);text-decoration:underline" style-hover="color:#F2F2F5">Privacy</a></span>
+<span>Founder experience reflects prior roles, not corporate past performance.</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scenario: 'ok', step: 0, introDone: false, page: 'home' };
+  introRef = (el) => { this.intro = el; };
+  skipIntro = () => { this.skipped = true; };
+  heroRef = (el) => { this.hero = el; };
+  startHero() {
+    const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const G = "01{}[]<>/|:;=+*#%&$@~^_-ABCDEF".split("");
+    const m = { x: -999, y: -999 };
+    this.onMove = (ev) => { const c = this.hero; if (!c) return; const b = c.getBoundingClientRect(); m.x = ev.clientX - b.left; m.y = ev.clientY - b.top; };
+    addEventListener("mousemove", this.onMove);
+    let W = 0, H = 0, cell = 16, cols = 0, drops = [], x, last = 0;
+    const init = (c) => {
+      const dpr = Math.min(devicePixelRatio || 1, 2); W = c.clientWidth; H = c.clientHeight; cell = W < 640 ? 14 : 16;
+      c.width = W * dpr; c.height = H * dpr; x = c.getContext("2d"); x.scale(dpr, dpr); x.textBaseline = "top";
+      cols = Math.ceil(W / cell); drops = Array.from({ length: cols }, () => ({ y: -Math.random() * H / cell, v: 0.25 + Math.random() * 0.5 }));
+    };
+    const step = (draw) => {
+      const c = this.hero;
+      x.globalCompositeOperation = "destination-out"; x.fillStyle = "rgba(0,0,0,0.09)"; x.fillRect(0, 0, W, H);
+      x.globalCompositeOperation = "source-over"; x.font = (cell - 2) + "px 'JetBrains Mono',monospace";
+      for (let i = 0; i < cols; i++) {
+        const d = drops[i]; d.y += d.v; const py = d.y * cell, px = i * cell;
+        if (py > 0 && py < H) { x.fillStyle = "rgba(220,190,255,.95)"; x.fillText(G[(Math.random() * G.length) | 0], px, py); x.fillStyle = "rgba(168,85,247,.55)"; x.fillText(G[(Math.random() * G.length) | 0], px, py - cell); }
+        if (py > H + 60 && Math.random() > 0.97) { d.y = -Math.random() * 12; d.v = 0.25 + Math.random() * 0.5; }
+      }
+      for (let k = 0; k < 6; k++) { const a = Math.random() * 6.283, r = Math.random() * 110; const px = Math.round((m.x + Math.cos(a) * r) / cell) * cell, py = Math.round((m.y + Math.sin(a) * r) / cell) * cell; if (px >= 0 && py >= 0 && px < W && py < H) { x.fillStyle = Math.random() > 0.5 ? "rgba(192,132,252,.9)" : "rgba(120,140,255,.9)"; x.fillText(G[(Math.random() * G.length) | 0], px, py); } }
+    };
+    const loop = (t) => {
+      this.hraf = requestAnimationFrame(loop);
+      const c = this.hero; if (!c || document.hidden || !c.clientWidth || t - last < 33) return; last = t;
+      if (c.clientWidth !== W || c.clientHeight !== H) init(c);
+      step();
+    };
+    if (reduce) { const c = this.hero; if (!c) return; init(c); for (let i = 0; i < 160; i++) step(); return; }
+    this.hraf = requestAnimationFrame(loop);
+  }
+  componentDidMount() {
+    setTimeout(() => this.startHero(), 0);
+    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) { this.finishIntro(true); } else {
+      document.body.style.overflow = 'hidden';
+      (document.fonts ? document.fonts.load("700 100px 'JetBrains Mono'").catch(() => {}) : Promise.resolve()).then(() => this.runIntro());
+    }
+    let tick = 0;
+    this.timer = setInterval(() => { tick = (tick + 1) % 7; this.setState({ step: Math.min(tick, 4) }); }, 1000);
+  }
+  setTitle(p) {
+    const t = { home: '', what: 'What we do', why: 'Why us', privacy: 'Privacy policy' }[p];
+    document.title = t ? `${t} | Privacute` : 'Privacute | Cybersecurity GRC and privacy advisory';
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); cancelAnimationFrame(this.hraf); removeEventListener("mousemove", this.onMove); clearInterval(this.timer); document.body.style.overflow = ''; }
+  finishIntro(instant) {
+    document.body.style.overflow = '';
+    if (instant || !this.intro) return this.setState({ introDone: true });
+    this.intro.style.opacity = '0';
+    setTimeout(() => this.setState({ introDone: true }), 600);
+  }
+  runIntro() {
+    const c = this.intro; if (!c) return;
+    const dpr = Math.min(devicePixelRatio || 1, 2), W = innerWidth, H = innerHeight;
+    c.width = W * dpr; c.height = H * dpr;
+    const x = c.getContext('2d'); x.scale(dpr, dpr);
+    const cell = W < 640 ? 12 : 16, cols = Math.ceil(W / cell), rows = Math.ceil(H / cell);
+    const m = document.createElement('canvas'); m.width = cols; m.height = rows;
+    const mx = m.getContext('2d'); mx.fillStyle = '#fff'; mx.textAlign = 'center'; mx.textBaseline = 'middle';
+    let fs = rows * 0.5; mx.font = `700 ${fs}px 'Space Grotesk',sans-serif`;
+    const tw = mx.measureText('PRIVACUTE').width, target = cols * 0.82; fs = Math.min(fs * target / tw, rows * 0.4);
+    mx.font = `700 ${fs}px 'Space Grotesk',sans-serif`; mx.fillText('PRIVACUTE', cols / 2, rows / 2);
+    const d = mx.getImageData(0, 0, cols, rows).data;
+    const G = '01{}[]<>/\\|:;=+*#%&$@~^_-ABCDEF0123456789'.split('');
+    const cells = [];
+    for (let r = 0; r < rows; r++) for (let q = 0; q < cols; q++) {
+      const on = d[(r * cols + q) * 4 + 3] > 120;
+      cells.push({ q, r, on, seed: Math.random(), g: G[(Math.random() * G.length) | 0], out: 700 + (q / cols) * 700 + Math.random() * 350 });
+    }
+    const t0 = performance.now(); x.textBaseline = 'top';
+    const draw = (now) => {
+      const t = now - t0;
+      if (this.skipped || t > 3300) return this.finishIntro();
+      x.fillStyle = '#0A0A11'; x.fillRect(0, 0, W, H);
+      x.font = `${cell - 2}px 'JetBrains Mono',monospace`;
+      const glow = Math.min(1, Math.max(0, (t - 600) / 700));
+      for (const k of cells) {
+        let a, col;
+        if (t < 90 + k.seed * 300) continue;
+        if (Math.random() < 0.05 + (k.on ? 0 : 0.02)) k.g = G[(Math.random() * G.length) | 0];
+        if (k.on) {
+          const settle = t > 1500 + k.seed * 500;
+          a = 0.35 + 0.65 * glow; col = settle ? '242,242,245' : '192,132,252';
+        } else {
+          if (t > k.out) continue;
+          a = 0.5 * Math.max(0, 1 - Math.max(0, t - (k.out - 350)) / 350);
+          col = k.seed > 0.5 ? '76,99,255' : '168,85,247';
+        }
+        x.fillStyle = `rgba(${col},${a})`; x.fillText(k.g, k.q * cell, k.r * cell);
+      }
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }
+  transRef = (el) => { this.trans = el; };
+  go(page) {
+    if (this.busy || page === this.state.page) return;
+    this.setTitle(page);
+    const c = this.trans; if (!c) return this.setState({ page });
+    this.busy = true;
+    const W = innerWidth, H = innerHeight, dpr = Math.min(devicePixelRatio || 1, 2);
+    c.width = W * dpr; c.height = H * dpr;
+    const x = c.getContext('2d'); x.scale(dpr, dpr);
+    const cell = W < 640 ? 12 : 16, cols = Math.ceil(W / cell), rows = Math.ceil(H / cell);
+    const G = '01{}[]<>/|:;=+*#%&$@~^_-'.split('');
+    const sd = []; for (let i = 0; i < cols * rows; i++) sd.push(Math.random());
+    const T1 = 380, T2 = 800, t0 = performance.now(); let swapped = false;
+    x.textBaseline = 'top'; x.font = `${cell - 2}px 'JetBrains Mono',monospace`;
+    const draw = (now) => {
+      const t = now - t0;
+      x.clearRect(0, 0, W, H);
+      if (t >= T2) { this.busy = false; return; }
+      if (t >= T1 && !swapped) { swapped = true; this.setState({ page }); window.scrollTo(0, 0); }
+      const cover = t < T1, p = cover ? t / T1 : (t - T1) / (T2 - T1);
+      for (let r = 0; r < rows; r++) for (let q = 0; q < cols; q++) {
+        const s = sd[r * cols + q], pos = q / cols * 0.7 + s * 0.3;
+        const on = cover ? p * 1.3 > pos : p * 1.3 < pos;
+        if (!on) continue;
+        const edge = Math.abs(p * 1.3 - pos) < 0.12;
+        x.fillStyle = edge ? 'rgba(242,242,245,.95)' : (s > 0.5 ? 'rgba(168,85,247,.9)' : 'rgba(76,99,255,.9)');
+        x.fillRect(q * cell, r * cell, cell, cell);
+        x.fillStyle = '#0A0A11'; x.fillText(G[(Math.floor(s * 991 + t / 60)) % G.length], q * cell + 2, r * cell + 1);
+      }
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }
+  unusedSeams() {
+    const vh = innerHeight;
+    for (const c of this.seams) {
+      const b = c.getBoundingClientRect();
+      if (b.bottom < 0 || b.top > vh) continue;
+      const w = Math.floor(b.width), h = Math.floor(b.height);
+      if (c.width !== w) { c.width = w; c.height = h; }
+      const x = c.getContext('2d'); x.clearRect(0, 0, w, h);
+      const prog = 1 - (b.top + h / 2) / vh;
+      const cell = w < 640 ? 12 : 16, cols = Math.ceil(w / cell), rows = Math.ceil(h / cell);
+      x.font = `${cell - 3}px 'JetBrains Mono',monospace`; x.textBaseline = 'top';
+      const G = '01{}[]<>/|:;=+*#%&$@~^_-', now = performance.now() / 400;
+      const edge = Math.max(0, Math.min(1, prog * 1.4 - 0.2));
+      for (let r = 0; r < rows; r++) {
+        const v = Math.sin((r / rows) * Math.PI);
+        for (let q = 0; q < cols; q++) {
+          const s = Math.abs(Math.sin(q * 12.9898 + r * 78.233 + c.dataset.seam * 3.1) * 43758.5453) % 1;
+          const wave = Math.abs(q / cols - edge);
+          const dens = v * Math.max(0, 1 - wave * 2.4) * 0.9;
+          if (s > dens) continue;
+          const gi = Math.floor(s * 997 + now * (s > 0.5 ? 1 : 0.5)) % G.length;
+          x.fillStyle = `rgba(${s > 0.45 ? '168,85,247' : '76,99,255'},${0.15 + dens * 0.55})`;
+          x.fillText(G[gi], q * cell, r * cell);
+        }
+      }
+    }
+  }
+  renderVals() {
+    const { scenario, step, introDone, page } = this.state;
+    const nav = [['what', 'What we do'], ['why', 'Why Privacute']];
+    const navItems = nav.map(([id, label]) => ({ label, go: (e) => { e.preventDefault(); this.go(id); }, color: page === id ? '#C084FC' : '#F2F2F5', line: page === id ? '#A855F7' : 'transparent' }));
+    const show = {}; ['home', 'what', 'why', 'privacy'].forEach((k) => { show[k] = page === k ? 'block' : 'none'; });
+    show.industries = show.services = show.ai = show.what; show.firm = show.engage = show.why;
+    const goHome = (e) => { e.preventDefault(); this.go('home'); };
+    const goPrivacy = (e) => { e.preventDefault(); this.go('privacy'); };
+    const deny = scenario !== 'ok';
+    const sc = [['ok', 'In-scope request'], ['out', 'Out-of-scope request'], ['exp', 'Expired access']];
+    const scenarios = sc.map(([id, label]) => {
+      const on = scenario === id;
+      return { label, pick: () => this.setState({ scenario: id, step: 0 }), color: on ? '#F2F2F5' : '#C084FC', bg: on ? 'rgba(168,85,247,.25)' : 'transparent', border: on ? '#A855F7' : 'rgba(192,132,252,.35)' };
+    });
+    const reqDetail = { ok: 'agent → read:records', out: 'agent → delete:records', exp: 'agent → read:records (after expiry)' }[scenario];
+    const tokDetail = { ok: 'scope: read:records · expires in minutes', out: 'scope: read:records · expires in minutes', exp: 'scope: read:records · expired' }[scenario];
+    const evalDetail = { ok: 'in scope · unexpired', out: 'action not in approved scope', exp: 'access past expiry' }[scenario];
+    const raw = [
+      { title: 'Agent request', detail: reqDetail },
+      { title: 'Scoped, short-lived token', detail: tokDetail },
+      { title: 'Evaluate', detail: evalDetail },
+      { title: deny ? 'Deny + alert' : 'Allow', detail: deny ? 'security team notified' : 'access granted within scope' },
+    ];
+    const steps = raw.map((s, i) => {
+      const on = step === i, past = step > i;
+      return { n: 'STEP 0' + (i + 1), title: s.title, detail: s.detail, bg: on ? 'rgba(168,85,247,.16)' : 'rgba(255,255,255,.02)', border: on ? '#A855F7' : 'rgba(255,255,255,.1)', opacity: on || past ? 1 : 0.45 };
+    });
+    const shown = step >= 3;
+    const outcome = {
+      verdict: shown ? (deny ? 'DENIED · ALERT SENT · AUDIT RECORD WRITTEN' : 'ALLOWED · AUDIT RECORD WRITTEN') : 'EVALUATING…',
+      log: shown ? (deny ? (scenario === 'out' ? 'Request outside approved scope. Denied; security team alerted.' : 'Request made after access expired. Denied; security team alerted.') : 'Request within approved scope. Every request is logged, allowed or not.') : 'Checking scope and expiry.',
+      color: deny && shown ? '#F2F2F5' : '#C084FC', border: shown ? '#A855F7' : 'rgba(255,255,255,.1)', bg: shown ? 'rgba(168,85,247,.1)' : 'rgba(255,255,255,.02)', opacity: shown ? 1 : 0.5,
+    };
+    const ph = (v) => ({ v, color: '#F2F2F5', border: 'none', pad: '0' });
+    const blank = (v) => ({ v, color: '#C084FC', border: '1px dashed #A855F7', pad: '2px 8px' });
+    return {
+      pageTitle: ({ home: '', what: 'What we do', why: 'Why Privacute', privacy: 'Privacy policy' }[page] ? ({ what: 'What we do', why: 'Why Privacute', privacy: 'Privacy policy' }[page] + ' | Privacute') : 'Privacute | Cybersecurity GRC and privacy advisory'),
+      introRef: this.introRef, skipIntro: this.skipIntro, transRef: this.transRef, heroRef: this.heroRef, navItems, show, goHome, goPrivacy,
+      cards: [['what','What we do','Cybersecurity GRC, data privacy, AI access governance and training, mapped to your industry.'],['why','Why Privacute','Programs and people together, ready for AI, your data stays yours. And how to engage us.']].map(([id,title,line]) => ({ title, line, go: (e) => { e.preventDefault(); this.go(id); } })),
+      introDisplay: introDone ? 'none' : 'block', year: new Date().getFullYear(),
+      tags: ['Healthcare', 'Financial services', 'SaaS', 'Regulated industries', 'GRC', 'Data privacy'],
+      industries: [
+        { n: '01', title: 'Healthcare', note: 'Alignment with HIPAA security requirements.' },
+        { n: '02', title: 'Financial services', note: 'Risk and control programs for financial teams.' },
+        { n: '03', title: 'SaaS', note: 'Security and privacy programs for software companies.' },
+        { n: '04', title: 'And more', note: 'Other regulated and data-heavy industries.' },
+      ],
+      scenarios, steps, outcome,
+      competencies: [
+        { n: '01', title: 'Cybersecurity GRC', body: 'Governance, risk and compliance programs mapped to the frameworks and regulations your industry answers to.' },
+        { n: '02', title: 'Data privacy', body: 'Privacy program support, including alignment with HIPAA security requirements for healthcare.' },
+        { n: '03', title: 'AI & non-human identity governance', body: 'We govern access for AI agents and service accounts: least-privilege, expiring access, an audit record for every request and alerts on denials. The evidence supports NIST SP 800-53 access control (AC) and audit (AU) controls.' },
+        { n: '04', title: 'Training for your people', body: 'Teaching the teams who work alongside AI and sensitive data to do it safely.' },
+      ],
+      diffs: [
+        { n: 'A', title: 'Programs and people together', body: 'Governance, privacy and training delivered as one engagement, so policy becomes practice.' },
+        { n: 'B', title: 'Ready for AI', body: 'We treat AI agents and non-human identities as first-class risks, with deny-and-alert on out-of-scope or expired access.' },
+        { n: 'C', title: 'Your data stays yours', body: 'Access and audit data stay in your environment.' },
+      ],
+      company: [
+        { k: 'NAICS', ...ph('541512 Computer Systems Design Services (primary)') }, { k: 'NAICS', ...ph('513210 Software Publishers (secondary)') },
+        { k: 'Location', ...ph('Maryland') },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
